@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="hero-unit">
+      <div>
+        <h1>
+          Corrie Schrijver
+        </h1>
+        <p>
+          Violin Maker and Restorer in Bath, UK 
+        </p>
+      </div>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="active"><a href="#red">Instruments</a></li>
+            <li><a href="#orange">Services</a></li>
+            <li><a href="#yellow">Directions</a></li>
+            <li><a href="#green">About</a></li>
+        </ul>
+        <div id="my-tab-content" class="tab-content">
+            <div class="tab-pane active" id="red">
+                <div class="row">
+                {% for i in s.instrument_set.all %}
+                    {% include 'inventory/instrument.html' %}
+                    {% if forloop.counter|divisibleby:"3" %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane" id="orange">
+                <ul>
+                    <li>
+Comprehensive repair and maintenance service for both instruments and bows. This includes re-hairs, major acident repairs and help with insurance claims.
+                    </li>
+                    <li>
+Improving tonal qualities and set up.
+                    </li>
+                    <li>
+Making new instruments and bows to commission, both in modern and Baroque style.
+                    </li> 
+                    <li>
+A number of instruments and bows for sale.
+                    </li>
+                    <li>
+Insurance valuations and appraisals
+                    </li>
+                    <li>
+I also stock a range of accessories. If you let me know which strings and rosin etc. you prefer, I will endeavour to stock them at a reasonable price
+                    </li>
+            </div>
+            <div class="tab-pane" id="yellow">
+<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps?q=51.376174,-2.356075&amp;num=1&amp;t=m&amp;ie=UTF8&amp;ll=51.37671,-2.358413&amp;spn=0.012858,0.027466&amp;z=15&amp;output=embed"></iframe><br /><small><a href="https://www.google.com/maps?q=51.376174,-2.356075&amp;num=1&amp;t=m&amp;ie=UTF8&amp;ll=51.37671,-2.358413&amp;spn=0.012858,0.027466&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+<li> By public transport/foot: From both the Bath Bus Station and the Bath Spa Railway station, a pleasant 5 minute walk will take you there. Walk trhough the Arches on the left of the station, across the River Avon, Across Rossiter Road and turn left into Widcombe Parade.</li>
+<li> By car from the east: follow the 136 (the main road south of the river through the centre, Pass the Holbourne Museum on the left, under the railway bridge, past the Royal Oak and the Fleece pubs on the left. When you enter the one way system (canal and lock on the left) *follow the main road and you are entering Widcombe Parade. You might be able to park on the right hand side in front of the shop (20 minute limit) or turn right and immediately right again into the small car park, or go round again and turn left and right into St. Marks Road (2 hr.limit). There is also a car park by the railway station and two other car parks near the Bus station, both within easy walking distance.</li>
+<li>By car from the west: follow the A36 round the one way system past Sainsbury's, go straight over the roundabout with all the railway arches and turn right at the give way. then as above from *.</li>
+
+            </div>
+            <div class="tab-pane" id="green">
+                <h1>Green</h1>
+                <p>green green green green green</p>
+            </div>
+        </div>
+ 
+        <hr />
+    </div >
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="span4">
+    <div class="instrument">
+        <h3>{{ i.model }}</h3>
+        <h4>by {{ i.model.maker }}</h4>
+        <i>&pound;{{i.price }} </i>
+        <img src="/{{ i.instrumentimage_set.all.0.image.url }}" style="margin-top: 10px;">
+    </div>
+</div>
+
