@@ -1,0 +1,66 @@
+#Django.gitignore
+*.log
+*.pot
+*.pyc
+local_settings.py
+#Python.gitignore
+*.py[cod]
+
+# C extensions
+*.so
+
+# PythonPackages.gitignore
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+# VIM.gitignore
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# TextMate.gitignore
+*.tmproj
+*.tmproject
+tmtags
+
+# OSX.gitignore
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Linux.gitignore
+.*
+!.gitignore
+*~

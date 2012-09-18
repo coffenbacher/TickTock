@@ -3,13 +3,22 @@ Instrument Marketplace
 
 This is the source repository for the Instrument Marketplace site.
 
-To create a new dev environment:
+#####For first time, fire following commands in workspace (or whatever you call it) directory:
 
-    git clone https://[your user name]@bitbucket.org/instruments/instruments.git
-    source env/bin/activate # this is for virtualenv, must do every session
-    cd main/
-    python manage.py runserver
+	## Clone this repository
+	git clone git@bitbucket.org:instruments/instruments.git
+	## Switch to cloned repository
+	cd instruments
+	## Setup your virtual environment for very first time
+	./setup_environment.sh
+	## Activate your virtual environment for this project
+	source activate.sh
+	## Run Django Development Sever
+	cd main/
+	python manage.py runserver
 
+#####Please fire following command from root of cloned repository for every new terminal session
 
+	source activate.sh
 
 
