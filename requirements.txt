@@ -7,3 +7,4 @@ django-extensions==0.9
 django-photologue==2.4
 ipython==0.13
 wsgiref==0.1.2
+django_compressor==1.2

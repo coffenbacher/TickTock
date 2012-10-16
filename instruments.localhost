@@ -1,0 +1,25 @@
+WSGIPythonPath /home/psjinx/workspace/work/charlie_instruments/main:/home/psjinx/venvs/instruments/lib/python2.7/site-packages
+
+<VirtualHost *:8001>
+	WSGIScriptAlias / /home/psjinx/workspace/work/charlie_instruments/main/main/wsgi.py
+
+	Alias /media/ /home/psjinx/workspace/work/charlie_instruments/main/media
+	Alias /static/ /home/psjinx/workspace/work/charlie_instruments/main/static/
+
+	<Directory /home/psjinx/workspace/work/charlie_instruments/main/static>
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+	<Directory /home/psjinx/workspace/work/charlie_instruments/main/media>
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+	<Directory /home/psjinx/workspace/work/charlie_instruments/main/main>
+		<Files wsgi.py>
+			Order deny,allow
+			Allow from all
+		</Files>
+	</Directory>
+</VirtualHost>
