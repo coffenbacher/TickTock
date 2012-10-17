@@ -1,15 +1,19 @@
-#Django.gitignore
+# Custom .gitignore
+instruments.db
+
+# Django.gitignore
 *.log
 *.pot
 *.pyc
 local_settings.py
-#Python.gitignore
+
+# Python.gitignore
 *.py[cod]
 
 # C extensions
 *.so
 
-# PythonPackages.gitignore
+# Packages
 *.egg
 *.egg-info
 dist
@@ -39,6 +43,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
 # VIM.gitignore
 .*.sw[a-z]
 *.un~
