@@ -3,10 +3,10 @@
     <div class="hero-unit">
       <div>
         <h1>
-          Corrie Schrijver
+          {{ s.name }} 
         </h1>
         <p>
-          Violin Maker and Restorer in Bath, UK 
+          {{ s.subtitle }}
         </p>
       </div>
     </div>
@@ -23,10 +23,20 @@
                 {% for i in s.instrument_set.all %}
                     {% include 'inventory/instrument.html' %}
                     {% if forloop.counter|divisibleby:"3" %}
-                        </div><div class="row">
+                    </div><div class="row">
                     {% endif %}
                 {% endfor %}
                 </div>
+                {% if edit %}
+                    <hr >
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h2>List an instrument:</h2>
+                        {{ form }}
+                        <br>
+                        <input type="submit" class="btn btn-primary btn-large">
+                    </form>
+                {% endif %}
             </div>
             <div class="tab-pane" id="orange">
                 <ul>

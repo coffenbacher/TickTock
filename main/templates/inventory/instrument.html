@@ -1,9 +1,11 @@
+<a href="/inventory/{{ i.pk }}">
 <div class="span4">
     <div class="instrument">
         <h3>{{ i.model }}</h3>
         <h4>by {{ i.model.maker }}</h4>
-        <i>&pound;{{i.price }} </i>
-        <img src="/{{ i.instrumentimage_set.all.0.image.url }}" style="margin-top: 10px;">
+        <i>&pound;{{i.price }} - {{ i.seller.name }} </i>
+        <img src="{{ i.instrumentimage_set.all.0.image.url }}" style="margin-top: 10px;">
+        {% if i.seller.user == request.user %}<i>Click to edit, add images, etc.</i>{% endif %}
     </div>
 </div>
-
+</a>

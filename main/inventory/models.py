@@ -22,6 +22,7 @@ class InstrumentType(TimeStampedModel):
 class InstrumentModel(TimeStampedModel):
     name = models.CharField(max_length=200)
     maker = models.ForeignKey('Maker')
+    instrument_type = models.ForeignKey('InstrumentType')
     year = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):

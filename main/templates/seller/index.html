@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    {% for i in s %}
+    
+    <div class="span4">
+        <a href="/dealer/{{ i.slugify }}">
+        <div class="instrument">
+            <h3>{{ i.name }}</h3>
+            <h4>{{ i.subtitle }}</h4>
+            <i>{{i.address }} </i>
+        </div>
+        </a>
+    </div>
+
+    {% if forloop.counter|divisibleby:"3" %}
+        </div><div class="row">
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
+

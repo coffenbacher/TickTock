@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="hero-unit">
+      <div>
+        <h1>
+          {{ i.model }} 
+        </h1>
+        <p>
+          by {{ i.model.maker }}
+        </p>
+      </div>
+      <div>
+        {% for img in i.instrumentimage_set.all %}
+            <img src="{{ img.image.url }}">
+
+        {% endfor %}
+
+
+      </div>
+    {% if edit %}
+        <h2>Add image</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input class="btn btn-primary btn-large" type="submit">
+        </form>
+    {% endif %}
+    </div>
+{% endblock %}

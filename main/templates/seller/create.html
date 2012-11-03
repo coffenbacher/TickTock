@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <h1>Create your seller profile</h1>
+    <div class="span8">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            {{ userform }}
+            <br>
+            <input class="btn btn-primary btn-large" type="submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
