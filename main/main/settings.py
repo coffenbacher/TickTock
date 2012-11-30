@@ -130,7 +130,8 @@ INSTALLED_APPS = (
     'buyer',
     'photologue',
     'django_extensions',
-    'compressor'
+    'compressor',
+    'blog'
 )
 
 # A sample logging configuration. The only tangible logging

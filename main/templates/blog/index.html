@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <hr>
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <div style="padding: 10px 0px;">
+            <i>Posted by {{ post.author.get_full_name }} on {{ post.created.date }}</i>
+        </div>
+        {% autoescape off %}
+        {{ post.post }}
+        {% endautoescape %}
+        <hr>
+    {% endfor %}
+{% endblock %}
+
