@@ -69,3 +69,5 @@ tmtags
 .*
 !.gitignore
 *~
+
+pysqlite-2.6.3

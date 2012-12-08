@@ -1,27 +1,64 @@
 {% extends 'base.html' %}
 
+{% block includes %}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="/static/js/gmaps.js"></script>
+<script type="text/javascript">
+    var map;
+     var update = function(){
+          map.removeMarkers();
+          $.get(window.location.pathname+'?json=y', function(data){
+            var d = eval('('+data+')');
+            for (s in d){
+                if (d[s].location__lat && d[s].location__lng)
+                    map.addMarker({
+                        lat: d[s].location__lat,
+                        lng: d[s].location__lng
+                        });
+            }
+          });
+     };
+    $(document).ready(function(){
+
+      map = new GMaps({
+        div: '#map',
+        lat: {{ center_lat }}, 
+        lng: {{ center_lng }},
+        zoom: {{ zoom }},
+      });
+      update();
+
+    });
+</script>
+
+{% endblock %}
+
 {% block content %}
-
-<div class="row">
-    {% for i in s %}
-    
-    <div class="span4">
-        <a href="/dealer/{{ i.slugify }}">
-        <div class="instrument">
-            <h3>{{ i.name }}</h3>
-            <h4>{{ i.subtitle }}</h4>
-            <i>{{i.address }} </i>
+    <div class="container">
+        <div class="row">
+            <div id="map" style="height:500px" class="span12"></div>
         </div>
-        </a>
+        <hr />
+
+        <div class="row">
+            {% for i in s %}
+            
+            <div class="span4">
+                <a href="/seller/{{ i.slugify }}">
+                <div class="instrument">
+                    <h3>{{ i.name }}</h3>
+                    <!--<h4>{{ i.subtitle }}</h4>-->
+                    <i>{{i.location.formatted_address }} </i>
+                </div>
+                </a>
+            </div>
+
+            {% if forloop.counter|divisibleby:"3" %}
+                </div><div class="row">
+            {% endif %}
+            {% endfor %}
+
+        </div>
     </div>
-
-    {% if forloop.counter|divisibleby:"3" %}
-        </div><div class="row">
-    {% endif %}
-    {% endfor %}
-
-</div>
-
-
 {% endblock %}
 

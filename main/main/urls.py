@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', 'main.views.home', name='home'),
     url(r'^map/$', 'main.views.map', name='map'),
     url(r'^map/search/$', 'main.views.map_search', name='map_search'),
-    url(r'^dealer/', include('seller.urls')),
+    url(r'^seller/', include('seller.urls')),
     url(r'^inventory/', include('inventory.urls')),
     url(r'^blog/', include('blog.urls')),
 

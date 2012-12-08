@@ -1,15 +1,14 @@
 # Create your views here.
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login
+from django.db.models import Avg
 from models import *
 from forms import *
 from inventory.forms import *
 from inventory.models import *
+from django.http import HttpResponse
+import json
 from django.shortcuts import render_to_response, redirect
-
-def index(request):
-    s = Seller.objects.all()
-    return render_to_response('seller/index.html', {'s': s})
 
 def create(request):
     if request.method == 'POST':
@@ -51,3 +50,23 @@ def show(request, name):
         form = InstrumentForm()
     
     return render_to_response('seller/show.html', RequestContext(request, {'s': s, 'edit': edit, 'form': form}))
+
+def index(request, **kwargs):
+    if 'location__country' in kwargs:
+        zoom = 4
+        sellers = Seller.objects.filter(location__country=kwargs['location__country'])
+    else:
+        zoom = 2
+        sellers = Seller.objects.all()
+
+    center_lat = sellers.aggregate(Avg('location__lat'))['location__lat__avg']
+    center_lng = sellers.aggregate(Avg('location__lng'))['location__lng__avg']
+
+    if 'json' in request.GET:
+        return HttpResponse(json.dumps(list(sellers.values('id', 'location__lat', 'location__lng'))))
+    
+    return render_to_response('seller/index.html', {'s': sellers,
+                                                    'center_lat': center_lat,
+                                                    'center_lng': center_lng,
+                                                    'zoom': zoom})
+
