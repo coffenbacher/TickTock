@@ -1,0 +1,348 @@
+diff --git a/django/contrib/gis/db/backends/postgis/creation.py b/django/contrib/gis/db/backends/postgis/creation.py
+index bad22be..fc8a242 100644
+--- a/django/contrib/gis/db/backends/postgis/creation.py
++++ b/django/contrib/gis/db/backends/postgis/creation.py
+@@ -1,4 +1,5 @@
+ from django.conf import settings
++from django.core.exceptions import ImproperlyConfigured
+ from django.db.backends.postgresql_psycopg2.creation import DatabaseCreation
+ 
+ class PostGISCreation(DatabaseCreation):
+@@ -38,12 +39,20 @@ class PostGISCreation(DatabaseCreation):
+                                   style.SQL_FIELD(qn(f.column)) +
+                                   style.SQL_KEYWORD(' SET NOT NULL') + ';')
+ 
+-
+             if f.spatial_index:
+                 # Spatial indexes created the same way for both Geometry and
+-                # Geography columns
++                # Geography columns.
++                # PostGIS 2.0 does not support GIST_GEOMETRY_OPS. So, on 1.5
++                # we use GIST_GEOMETRY_OPS, on 2.0 we use either "nd" ops
++                # which are fast on multidimensional cases, or just plain
++                # gist index for the 2d case.
+                 if f.geography:
+                     index_opts = ''
++                elif self.connection.ops.spatial_version >= (2, 0):
++                    if f.dim > 2:
++                        index_opts = ' ' + style.SQL_KEYWORD('gist_geometry_ops_nd')
++                    else:
++                        index_opts = ''
+                 else:
+                     index_opts = ' ' + style.SQL_KEYWORD(self.geom_index_opts)
+                 output.append(style.SQL_KEYWORD('CREATE INDEX ') +
+@@ -56,5 +65,15 @@ class PostGISCreation(DatabaseCreation):
+         return output
+ 
+     def sql_table_creation_suffix(self):
+-        qn = self.connection.ops.quote_name
+-        return ' TEMPLATE %s' % qn(getattr(settings, 'POSTGIS_TEMPLATE', 'template_postgis'))
++        cursor = self.connection.cursor()
++        cursor.execute('select datname from pg_database;')
++        db_names = [row[0] for row in cursor.fetchall()]
++        postgis_template = getattr(settings, 'POSTGIS_TEMPLATE', 'template_postgis')
++
++        if postgis_template in db_names:
++            qn = self.connection.ops.quote_name
++            return ' TEMPLATE %s' % qn(postgis_template)
++        elif self.connection.ops.spatial_version < (2, 0):
++            raise ImproperlyConfigured("Template database '%s' does not exist." % postgis_template)
++        else:
++            return ''
+diff --git a/django/contrib/gis/gdal/tests/test_ds.py b/django/contrib/gis/gdal/tests/test_ds.py
+index 71d22a0..5dfafd2 100644
+--- a/django/contrib/gis/gdal/tests/test_ds.py
++++ b/django/contrib/gis/gdal/tests/test_ds.py
+@@ -8,7 +8,7 @@ from django.contrib.gis.geometry.test_data import get_ds_file, TestDS, TEST_DATA
+ ds_list = (TestDS('test_point', nfeat=5, nfld=3, geom='POINT', gtype=1, driver='ESRI Shapefile',
+                   fields={'dbl' : OFTReal, 'int' : OFTInteger, 'str' : OFTString,},
+                   extent=(-1.35011,0.166623,-0.524093,0.824508), # Got extent from QGIS
+-                  srs_wkt='GEOGCS["GCS_WGS_1984",DATUM["WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]',
++                  srs_wkt='GEOGCS["GCS_WGS_1984",DATUM["WGS_1984",SPHEROID["WGS_84",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]',
+                   field_values={'dbl' : [float(i) for i in range(1, 6)], 'int' : range(1, 6), 'str' : [str(i) for i in range(1, 6)]},
+                   fids=range(5)),
+            TestDS('test_vrt', ext='vrt', nfeat=3, nfld=3, geom='POINT', gtype='Point25D', driver='VRT',
+@@ -20,7 +20,7 @@ ds_list = (TestDS('test_point', nfeat=5, nfld=3, geom='POINT', gtype=1, driver='
+                   driver='ESRI Shapefile',
+                   fields={'float' : OFTReal, 'int' : OFTInteger, 'str' : OFTString,},
+                   extent=(-1.01513,-0.558245,0.161876,0.839637), # Got extent from QGIS
+-                  srs_wkt='GEOGCS["GCS_WGS_1984",DATUM["WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]'),
++                  srs_wkt='GEOGCS["GCS_WGS_1984",DATUM["WGS_1984",SPHEROID["WGS_84",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]'),
+            )
+ 
+ bad_ds = (TestDS('foo'),
+diff --git a/django/contrib/gis/gdal/tests/test_geom.py b/django/contrib/gis/gdal/tests/test_geom.py
+index a0b2593..c12bc76 100644
+--- a/django/contrib/gis/gdal/tests/test_geom.py
++++ b/django/contrib/gis/gdal/tests/test_geom.py
+@@ -8,6 +8,7 @@ from django.contrib.gis.gdal import (OGRGeometry, OGRGeomType, OGRException,
+     OGRIndexError, SpatialReference, CoordTransform, GDAL_VERSION)
+ from django.contrib.gis.geometry.test_data import TestDataMixin
+ from django.utils.six.moves import xrange
++from django.utils import simplejson
+ from django.utils import unittest
+ 
+ class OGRGeomTest(unittest.TestCase, TestDataMixin):
+@@ -111,8 +112,8 @@ class OGRGeomTest(unittest.TestCase, TestDataMixin):
+         for g in self.geometries.json_geoms:
+             geom = OGRGeometry(g.wkt)
+             if not hasattr(g, 'not_equal'):
+-                self.assertEqual(g.json, geom.json)
+-                self.assertEqual(g.json, geom.geojson)
++                self.assertEqual(simplejson.loads(g.json), simplejson.loads(geom.json))
++                self.assertEqual(simplejson.loads(g.json), simplejson.loads(geom.geojson))
+             self.assertEqual(OGRGeometry(g.wkt), OGRGeometry(geom.json))
+ 
+     def test02_points(self):
+diff --git a/django/contrib/gis/geos/tests/test_geos.py b/django/contrib/gis/geos/tests/test_geos.py
+index d621c6b..0969e23 100644
+--- a/django/contrib/gis/geos/tests/test_geos.py
++++ b/django/contrib/gis/geos/tests/test_geos.py
+@@ -10,6 +10,7 @@ from django.contrib.gis.geometry.test_data import TestDataMixin
+ 
+ from django.utils import six
+ from django.utils.six.moves import xrange
++from django.utils import simplejson
+ from django.utils import unittest
+ 
+ 
+@@ -204,8 +205,8 @@ class GEOSTest(unittest.TestCase, TestDataMixin):
+         for g in self.geometries.json_geoms:
+             geom = GEOSGeometry(g.wkt)
+             if not hasattr(g, 'not_equal'):
+-                self.assertEqual(g.json, geom.json)
+-                self.assertEqual(g.json, geom.geojson)
++                self.assertEqual(simplejson.loads(g.json), simplejson.loads(geom.json))
++                self.assertEqual(simplejson.loads(g.json), simplejson.loads(geom.geojson))
+             self.assertEqual(GEOSGeometry(g.wkt), GEOSGeometry(geom.json))
+ 
+     def test_fromfile(self):
+diff --git a/docs/ref/contrib/gis/install.txt b/docs/ref/contrib/gis/install.txt
+index 72bd72a..70b1085 100644
+--- a/docs/ref/contrib/gis/install.txt
++++ b/docs/ref/contrib/gis/install.txt
+@@ -63,7 +63,7 @@ supported versions, and any notes for each of the supported database backends:
+ ==================  ==============================  ==================  ==========================================================
+ Database            Library Requirements            Supported Versions  Notes
+ ==================  ==============================  ==================  ==========================================================
+-PostgreSQL          GEOS, PROJ.4, PostGIS           8.1+                Requires PostGIS.
++PostgreSQL          GEOS, GDAL, PROJ.4, PostGIS     8.2+                Requires PostGIS.
+ MySQL               GEOS                            5.x                 Not OGC-compliant; limited functionality.
+ Oracle              GEOS                            10.2, 11            XE not supported; not tested with 9.
+ SQLite              GEOS, GDAL, PROJ.4, SpatiaLite  3.6.+               Requires SpatiaLite 2.3+, pysqlite2 2.5+, and Django 1.1.
+@@ -81,9 +81,10 @@ Program                   Description                           Required
+ ========================  ====================================  ================================  ==========================
+ :ref:`GEOS <ref-geos>`    Geometry Engine Open Source           Yes                               3.3, 3.2, 3.1, 3.0
+ `PROJ.4`_                 Cartographic Projections library      Yes (PostgreSQL and SQLite only)  4.7, 4.6, 4.5, 4.4
+-:ref:`GDAL <ref-gdal>`    Geospatial Data Abstraction Library   No (but, required for SQLite)     1.9, 1.8, 1.7, 1.6, 1.5
++:ref:`GDAL <ref-gdal>`    Geospatial Data Abstraction Library   No (but, required for SQLite
++                                                                and PostgreSQL)                   1.9, 1.8, 1.7, 1.6, 1.5
+ :ref:`GeoIP <ref-geoip>`  IP-based geolocation library          No                                1.4
+-`PostGIS`__               Spatial extensions for PostgreSQL     Yes (PostgreSQL only)             1.5, 1.4, 1.3
++`PostGIS`__               Spatial extensions for PostgreSQL     Yes (PostgreSQL only)             2.0, 1.5, 1.4, 1.3
+ `SpatiaLite`__            Spatial extensions for SQLite         Yes (SQLite only)                 3.0, 2.4, 2.3
+ ========================  ====================================  ================================  ==========================
+ 
+@@ -140,16 +141,16 @@ internal geometry representation used by GeoDjango (it's behind the "lazy"
+ geometries).  Specifically, the C API library is called (e.g., ``libgeos_c.so``)
+ directly from Python using ctypes.
+ 
+-First, download GEOS 3.2 from the refractions Web site and untar the source
++First, download GEOS 3.3.5 from the refractions Web site and untar the source
+ archive::
+ 
+-    $ wget http://download.osgeo.org/geos/geos-3.3.0.tar.bz2
+-    $ tar xjf geos-3.3.0.tar.bz2
++    $ wget http://download.osgeo.org/geos/geos-3.3.5.tar.bz2
++    $ tar xjf geos-3.3.5.tar.bz2
+ 
+ Next, change into the directory where GEOS was unpacked, run the configure
+ script, compile, and install::
+ 
+-    $ cd geos-3.3.0
++    $ cd geos-3.3.5
+     $ ./configure
+     $ make
+     $ sudo make install
+@@ -221,45 +222,6 @@ Finally, configure, make and install PROJ.4::
+     $ sudo make install
+     $ cd ..
+ 
+-.. _postgis:
+-
+-PostGIS
+--------
+-
+-`PostGIS`__ adds geographic object support to PostgreSQL, turning it
+-into a spatial database. :ref:`geosbuild` and :ref:`proj4` should be
+-installed prior to building PostGIS.
+-
+-.. note::
+-
+-    The `psycopg2`_ module is required for use as the database adaptor
+-    when using GeoDjango with PostGIS.
+-
+-.. _psycopg2: http://initd.org/psycopg/
+-
+-First download the source archive, and extract::
+-
+-    $ wget http://postgis.refractions.net/download/postgis-1.5.2.tar.gz
+-    $ tar xzf postgis-1.5.2.tar.gz
+-    $ cd postgis-1.5.2
+-
+-Next, configure, make and install PostGIS::
+-
+-    $ ./configure
+-
+-Finally, make and install::
+-
+-    $ make
+-    $ sudo make install
+-    $ cd ..
+-
+-.. note::
+-
+-    GeoDjango does not automatically create a spatial database.  Please
+-    consult the section on :ref:`spatialdb_template` for more information.
+-
+-__ http://postgis.refractions.net/
+-
+ .. _gdalbuild:
+ 
+ GDAL
+@@ -359,6 +321,48 @@ file:
+ 
+     SetEnv GDAL_DATA /usr/local/share
+ 
++.. _postgis:
++
++PostGIS
++-------
++
++`PostGIS`__ adds geographic object support to PostgreSQL, turning it
++into a spatial database. :ref:`geosbuild`, :ref:`proj4` and
++:ref:`gdalbuild` should be installed prior to building PostGIS. You
++might also need additional libraries, see `PostGIS requirements`_.
++
++.. note::
++
++    The `psycopg2`_ module is required for use as the database adaptor
++    when using GeoDjango with PostGIS.
++
++.. _psycopg2: http://initd.org/psycopg/
++.. _PostGIS requirements: http://www.postgis.org/documentation/manual-2.0/postgis_installation.html#id2711662
++
++First download the source archive, and extract::
++
++    $ wget http://postgis.refractions.net/download/postgis-2.0.1.tar.gz
++    $ tar xzf postgis-2.0.1.tar.gz
++    $ cd postgis-2.0.1
++
++Next, configure, make and install PostGIS::
++
++    $ ./configure
++
++Finally, make and install::
++
++    $ make
++    $ sudo make install
++    $ cd ..
++
++.. note::
++
++    GeoDjango does not automatically create a spatial database.  Please consult
++    the section on :ref:`spatialdb_template91` or
++    :ref:`spatialdb_template_earlier` for more information.
++
++__ http://postgis.refractions.net/
++
+ .. _spatialite:
+ 
+ SpatiaLite
+@@ -421,7 +425,7 @@ After SQLite has been built with the R*Tree module enabled, get the latest
+ SpatiaLite library source and tools bundle from the `download page`__::
+ 
+     $ wget http://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-amalgamation-2.3.1.tar.gz
+-    $ wget http://www.gaia-gis.it/gaia-sins/libspatialite-sources/spatialite-tools-2.3.1.tar.gz
++    $ wget http://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/spatialite-tools-2.3.1.tar.gz
+     $ tar xzf libspatialite-amalgamation-2.3.1.tar.gz
+     $ tar xzf spatialite-tools-2.3.1.tar.gz
+ 
+@@ -502,10 +506,27 @@ to build and install::
+ Post-installation
+ =================
+ 
+-.. _spatialdb_template:
++.. _spatialdb_template91:
++
++Creating a spatial database with PostGIS 2.0 and PostgreSQL 9.1
++---------------------------------------------------------------
++
++PostGIS 2 includes an extension for Postgres 9.1 that can be used to enable
++spatial functionality::
++
++    $ createdb  <db name>
++    $ psql <db name>
++    > CREATE EXTENSION postgis;
++    > CREATE EXTENSION postgis_topology;
++
++.. _spatialdb_template_earlier:
++
++Creating a spatial database template for earlier versions
++---------------------------------------------------------
+ 
+-Creating a spatial database template for PostGIS
+-------------------------------------------------
++If you have an earlier version of PostGIS or PostgreSQL, the CREATE
++EXTENSION isn't available and you need to create the spatial database
++using the following instructions.
+ 
+ Creating a spatial database with PostGIS is different than normal because
+ additional SQL must be loaded to enable spatial functionality.  Because of
+@@ -535,7 +556,7 @@ user.  For example, you can use the following to become the ``postgres`` user::
+ Once you're a database super user, then you may execute the following commands
+ to create a PostGIS spatial database template::
+ 
+-    $ POSTGIS_SQL_PATH=`pg_config --sharedir`/contrib/postgis-1.5
++    $ POSTGIS_SQL_PATH=`pg_config --sharedir`/contrib/postgis-2.0
+     # Creating the template spatial database.
+     $ createdb -E UTF8 template_postgis
+     $ createlang -d template_postgis plpgsql # Adding PLPGSQL language support.
+@@ -605,7 +626,7 @@ http://www.gaia-gis.it/spatialite-2.4.0/ for 2.4)::
+ 
+ Then, use the ``spatialite`` command to initialize a spatial database::
+ 
+-   $ spatialite geodjango.db < init_spatialite-2.X.sql
++   $ spatialite geodjango.db < init_spatialite-2.3.sql
+ 
+ .. note::
+ 
+@@ -1080,7 +1101,7 @@ Afterwards, the ``/etc/init.d/postgresql-8.3`` script should be used to manage
+ the starting and stopping of PostgreSQL.
+ 
+ In addition, the SQL files for PostGIS are placed in a different location on
+-Debian 5.0 . Thus when :ref:`spatialdb_template` either:
++Debian 5.0 . Thus when :ref:`spatialdb_template_earlier` either:
+ 
+ * Create a symbolic link to these files:
+ 
+@@ -1266,4 +1287,4 @@ may be executed from the SQL Shell as the ``postgres`` user::
+ .. [#] GeoDjango uses the :func:`~ctypes.util.find_library` routine from
+        :mod:`ctypes.util` to locate shared libraries.
+ .. [#] The ``psycopg2`` Windows installers are packaged and maintained by
+-       `Jason Erickson <http://www.stickpeople.com/projects/python/win-psycopg/>`_.
++       `Jason Erickson <http://www.stickpeople.com/projects/python/win-psycopg/>`_.
+\ No newline at end of file
+diff --git a/docs/releases/1.5.txt b/docs/releases/1.5.txt
+index 3a9b2d8..19353f6 100644
+--- a/docs/releases/1.5.txt
++++ b/docs/releases/1.5.txt
+@@ -252,6 +252,8 @@ on the form.
+ Miscellaneous
+ ~~~~~~~~~~~~~
+ 
++* GeoDjango added support for PostGIS 2.0
++
+ * GeoDjango dropped support for GDAL < 1.5
+ 
+ * :func:`~django.utils.http.int_to_base36` properly raises a :exc:`TypeError`
