@@ -14,16 +14,17 @@
       });
      $("select").change(function(){
           $.get('/map/search/', function(data){
+            map.removeMarkers();
             var d = eval('('+data+')');
             for (s in d){
                 map.addMarker({
                     lat: d[s].lat,
                     lng: d[s].lng
                     });
-
             }
           });
      });
+     $("select").change();
     });
 </script>
 

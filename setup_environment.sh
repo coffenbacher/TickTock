@@ -30,3 +30,4 @@ sudo apt-add-repository ppa:ubuntugis/ubuntugis-unstable
 sudo apt-get update
 sudo apt-get install libpq-dev python-dev
 sudo apt-get install postgresql-9.1-postgis2 
+pip install git+git://github.com/django/django.git
