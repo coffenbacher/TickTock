@@ -1,141 +1,177 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <entries>
 <entry>
-Yuichi Imai
-Classic Guitars
-60-16 Nakano 1-Chome
-Nakano-Ku, Tokyo 164-0001 
+	<name>Yuichi Imai</name>
+<business_name>Classic Guitars</business_name>
+<address>60-16 Nakano 1-Chome
+Nakano-Ku, Tokyo 164-0001 </address>
 <phone>(03) 3368-6643</phone>
 <email>imaiguit@rb4.so-net.ne.jp</email>
 Local Luthiers - Thailand
 </entry>
 <entry>
-Poomchai Rangkakulnuwat
-1/103 Chaengwattana Road
-Thung-Song-Hong, Laksi
-Bangkok 10210
+	<name>Poomchai Rangkakulnuwat</name>
+<address>1/103 Chaengwattana Road
+Thung-Song-Hong, Laksi Bangkok 10210</address>
 <phone>085-188-1135</phone>
 <email>poomchai@rangkaguitars.com></email>
 <website>http://www.rangkaguitars.com</website>
 </entry>
 <entry>
-Chanta Guitar
-Pansaeng Chantarangkul, Luthier
-16 Soi 4 Saree 8 Rama 9 Road
-Soungroung, Bangkok 10250
+	<name>Chanta Guitar</name>
+<business_name>Pansaeng Chantarangkul</business_name>, Luthier
+<address>16 Soi 4 Saree 8 Rama 9 Road
+Soungroung, Bangkok 10250</address>
 <phone>081-628-5110</phone>
 <email>panseang@hotmail.com</email>
 <website>http://www.chantaguitar.blogspot.com</website>
 </entry>
 <entry>
-Visesnut Guitars
-Narongsak Visesnut, Luthier
-92 Santiphab Road
-Pomprab, Bangkok 10100
+	<name>Visesnut Guitars</name>
+<business_name>Narongsak Visesnut</business_name>, Luthier
+<address>92 Santiphab Road
+Pomprab, Bangkok 10100</address>
 <phone>6681-66855340</phone>
 <email>visenut@me.com</email>
 <website>http//web.me.com/visenut</website>
 </entry>
 <entry>
-Wiroon Songbundit 356 Sriayudya Road Payathai, Rajthevi,
-Bangkok 10400
+	<name>Wiroon Songbundit </name>
+<address>356 Sriayudya Road Payathai, Rajthevi, Bangkok 10400</address>
 <phone>081-3255596081-2745103</phone>
 <email>guitarmaker@yahoo.com</email>
 <website>www.wiroonguitar.blogspot.com</website>
 <phone>081-3255596081-2745103</phone>
 <email>guitarmaker@yahoo.com</email>
 <website>www.wiroonguitar.blogspot.com</website>
- Luthier Diego Eduardo Mena Address: Thames 1714 8D 
+<entry>
+<name> Diego Eduardo Mena </name>
+<address>Address: Thames 1714 8D </address>
 <phone>+54 911 5379 4045</phone>
 <website>www.luthiermena.weebly.com</website>
 <email>diegoeduardomen@yahoo.com</email>
 Instruments I make:Guitars, Violins,Lutes, Violas da Gamba, Baroque Guitars 
 </entry>
 <entry>
-Jose Mendez Oncativo 2026 Lanus 1824 Buenos Aires
+	<name>Jose Mendez</name>
+<business_name>Oncativo </business_name>
+<address>2026 Lanus 1824 Buenos Aires</address>
 <email>cc951048@bed.buenayre.com.ar</email>
 </entry>
 <entry>
- Martin Koch Hartbergerstrasse 22 A-8200 Gleisdorf Austria/Europe 
+	<name> Martin Koch</name>
+ <business_name>Hartbergerstrasse</business_name>
+<address> 22 A-8200 Gleisdorf Austria/Europe </address>
 <email>koch@kwb.tu-graz.ac.at</email>
 <website>http://www.cis.tu-graz.ac.at/iwb/martin/welcome.html</website>
 </entry>
 <entry>
-  Paul Avenell D'Arcy Guitars Belmont Rd Brisbane, Queensland 4153 
+	<name>  Paul Avenell </name>
+  <business_name>D'Arcy Guitars </business_name>
+<address>  Belmont Rd Brisbane, Queensland 4153 </address>
 <email>pavmuse@powerup.com.au</email>
 </entry>
 <entry>
-Glenn Bird Glenn Bird Guitars 45 Albert Street Corrimal 2518 NSW Australia
+	<name>Glenn Bird </name>
+<business_name>Glenn Bird Guitars </business_name>
+<address>45 Albert Street Corrimal 
+2518 NSW Australia</address>
 <phone>0418476272</phone>
 <email>glennbird@netspace.net.au</email>
 <website>http://www.glennbirdguitars.com.au</website>
 </entry>
 <entry>
-James Carrett 430 Stenner St Toowoomba, Queensland, 4350 
+	<name>James Carrett</name>
+<address>430 Stenner St Toowoomba
+Queensland, 4350 </address>
 <email>carrettj@ozemail.com.au</email>
 </entry>
 <entry>
-Mick Edwards 48 Dukes Lane Adelaide, South Australia 5000 
+	<name>Mick Edwards</name>
+<address>48 Dukes Lane Adelaide
+South Australia 5000 </address>
 <email>micke@adelaide.on.net</email>
 </entry>
 <entry>
-Mick Gentry Guitar Repairs Flinders Ave Molendinar, Queensland 4214 
+	<name>Mick Gentry</name>
+<business_name>Guitar Repairs</business_name>
+<address>Flinders Ave Molendinar, Queensland 4214 </address>
 <email>mickgrep@fan.net.au</email>
 </entry>
 <entry>
-Joe Gallacher Gallacher Guitars 255 Kooba Street Albury NSW 2640 
+	<name>Joe Gallacher</name>
+<business_name>Gallacher Guitars</business_name>
+<address>255 Kooba Street Albury NSW 2640 </address>
 <email>stuart@dragnet.com.au</email>
 </entry>
 <entry>
-Gerard Gilet Gilet Guitars &amp; Guitarwoods Factory 5/6 Booralee St. Botany NSW 2019 
+	<name>Gerard Gilet</name>
+<business_name>Gilet Guitars &amp; Guitarwoods Factory </business_name>
+<address>5/6 Booralee St. Botany NSW 2019 </address>
 <website>http://www.spirit.com.au</website>
 </entry>
 <entry>
-Jeff Kemp Australian Classical Guitar Maker PO Box 943 Armidale, NSW 2350 
+	<name>Jeff Kemp</name>
+<business_name>Australian Classical Guitar Maker</business_name>
+<address>PO Box 943 Armidale, NSW 2350 </address>
 <email>jeffkemp@northnet.com.au</email>
 <website>http://www.ozemail.com.au/~jeffkemp/classical/guitar.html</website>
 </entry>
 <entry>
-Thomas B. Livesey T.B. Livesey Guitars P.O. Box 215 Gin Gin Queensland 4671 
+	<name>Thomas B. Livesey </name>
+<business_name>T.B. Livesey Guitars</business_name>
+P.O. Box 215 Gin Gin Queensland 4671 
 <email>couzens@mpx.com.au</email>
 <website>http://www.mpx.com.au</website>
 </entry>
 <entry>
-Graham McArthur 9 Eileen Street Modbury, South Australia 5092 
+	<name>Graham McArthur</name>
+<address>9 Eileen Street Modbury, South Australia 5092 </address>
 <email>grahammc@camtech.net.au</email>
 </entry>
 <entry>
-Graham McDonald PO Box 365 Jamison, ACT 2614 
+	<name>Graham McDonald</name>
+<address>PO Box 365 Jamison, ACT 2614 </address>
 <website>http://www.spirit.com.au/~gramac/instruments.html</website>
 </entry>
 <entry>
-Gabriel Ochoteco Gabriel's Guitar Workshop 115 Gotha Street Brisbane, Queensland 4006 C/O 
+	<name>Gabriel Ochoteco</name>
+<business_name>Gabriel's Guitar Workshop</business_name>
+<address>115 Gotha Street Brisbane
+Queensland 4006 C/O </address>
 <email>J.Owens@qca.gu.edu.au</email>
 </entry>
 <entry>
-Michael J. Palm Palmwood Guitars &amp; Stringed Instruments 92 Thomas St Wellington Pt, Queensland 4159 C/O 
+	<name>Michael J. Palm</name>
+<business_name>Palmwood Guitars &amp; Stringed Instruments </business_name>
+<address>92 Thomas St Wellington Pt
+Queensland 4159 C/O </address>
 <email>J.Owens@qca.gu.edu.au</email>
 </entry>
 <entry>
-Jim Redgate J. K. Redgate Guitars 46 Penno Pde. Nth. Adelaide 5052 S.A. 
+	<name>Jim Redgate</name>
+<business_name>J. K. Redgate Guitars </business_name>
+<address>46 Penno Pde. Nth. Adelaide 5052 S.A. </address>
 <email>redgate@ozemail.com.au</email>
 <website>http://www.ozemail.com.au/~redgate/</website>
 </entry>
 <entry>
-Gary Rizzolo The Guitar Company 113 York St, Sandy Bay Hobart, Tasmania 7005 
+	<name>Gary Rizzolo</name>
+<business_name>The Guitar Company</business_name>
+<address>113 York St, Sandy Bay Hobart
+Tasmania 7005 </address>
 <email>rizzolo@netspace.net.au</email>
 </entry>
 <entry>
-Lawrence K. Smith LKS Guitars &amp; Mandolins 8 Mt. Gilead Rd Thirroul, NSW 
+	<name>Lawrence K. Smith</name>
+<business_name>LKS Guitars &amp; Mandolins</business_name>
+<address>8 Mt. Gilead Rd Thirroul, NSW </address>
 <email>lksguit@ozemail.com.au</email>
 <website>http://www.ozemail.com.au/~lksguit</website>
 </entry>
 <entry>
-Billy Tarrant
-Tarrant Guitars
-Shearwater
-Tasmania
-Australia
+	<name>Billy Tarrant</name>
+<business_name>Tarrant Guitars</business_name>
 <phone>+61 409 176 761</phone>
 <email>Tarrantguitars@gmail.com</email>
 Home Page:
@@ -146,431 +182,586 @@ hollow neck weissenborns and ukulele's using the finest solid tonewood from loca
 also offers repair services on all stringed instruments. NEW WORKSHOP OPEN IN TASMANIA.(see www.tarrantguitars.com for more details.) 
 </entry>
 <entry>
-Chris Wynne Thomas Lloyd Guitars 15 Yarra Street Yarra Glen Melbourne, Victoria 3775 
+	<name>Chris Wynne</name>
+<business_name>Thomas Lloyd Guitars</business_name>
+<address>15 Yarra Street Yarra Glen
+Melbourne, Victoria 3775 </address>
 <email>matty@wire.net.au</email>
 </entry>
 <entry>
- Eduardo Thiago Areas Brito SHIN QI - 08 Conj - 09 Casa 16 Brasilia DF 71520 - 290 
+	<name> Eduardo Thiago</name>
+ <business_name>Areas Brito </business_name>
+<address> SHIN QI - 08 Conj - 
+ 09 Casa 16 Brasilia DF 71520 - 290 </address>
 <email>Botafogo@mre.gov.br</email>
 </entry>
 <entry>
-Jose Antonio Ruotolo Filho Rua dos Trilhos, 2096 Sao Paulo, SP 03168-010 
+	<name>Jose Antonio </name>
+<business_name>Ruotolo Filho Rua dos Trilhos</business_name>
+<address>2096 Sao Paulo SP 03168-010 </address>
 <email>ruotolo@mandic.com.br</email>
 </entry>
 <entry>
-Gustavo Antonio De Nadal Chapec Companhia Industrial de Alimentos Rua Lauro Mller, 304-E, Centro 
+	<name>Gustavo Antonio </name>
+<business_name>De Nadal Chapec Companhia Industrial de Alimentos Rua Lauro Mller</business_name>
+304-E, Centro 
 </entry>
 <entry>
- Juan Carlos Moraga Alvarez Rio Blanco 217 Chaiten 
+	<name> Juan Carlos Moraga Alvarez </name>
+<address> Rio Blanco 217 Chaiten </address>
 <email>jmoraga@entel.cl</email>
 </entry>
 <entry>
- Ignacio Castrillon Calle 73 # 49-60 Medellin Colombia 
+	<name> Ignacio Castrillon </name>
+<address> Calle 73 # 49-60 Medellin Colombia </address>
 </entry>
 <entry>
-Humberto Correa Flores Condor de Colombia Carrera 12A # 77A-05 Bogata Colombia 
+	<name>Humberto Correa Flores </name>
+<business_name>Condor de Colombia Carrera </business_name>
+<address>12A # 77A-05 Bogata Colombia </address>
 </entry>
 <entry>
-Alberto Paredes Rodr&iacute;guez Alberto Paredes R. Transversal 68D # 79A-15 Santaf&eacute; de Bogot Bogot Colombia 
+	<name>Alberto Paredes Rodr&iacute;guez </name>
+<business_name>Alberto Paredes R. Transversal </business_name>
+<address>68D # 79A-15 Santaf&eacute; de Bogot Bogot Colombia </address>
 <email>albertoparedes@hotmail.co</email>
 </entry>
 <entry>
- Kennedy's Guitar Workshop Capitol House Heigham Street Norwich NR2 4TE United Kingdom 
+	<name> Kennedy's Guitar Workshop</name>
+ <business_name>Capitol House Heigham Street</business_name>
+<address> Norwich NR2 4TE United Kingdom </address>
 <website>http://www.mick-kennedy.com/luthier.htm</website>
 </entry>
 <entry>
-John Anderson Panasonic Willoughby Road Bracknell 
-<email>john.anderson@b-e-grp.demon.co.uk</email>
+	<name>John Anderson Panasonic Willoughby Road Bracknell </name>
+<business_name></business_name><email>john.anderson@b-e-grp.demon.co.uk</email>
 </entry>
 <entry>
-Tim Deacon Carodyce Instruments 1 Castle Road Weybridge, Surrey, KT13 9QP 
+	<name>Tim Deacon</name>
+<business_name>Carodyce Instruments</business_name>
+<address>1 Castle Road Weybridge, Surrey, KT13 9QP </address>
 <email>tim@opius.co.uk</email>
 <website>http://www.cybozone.com/fg/deacon.html</website>
 </entry>
 <entry>
-Wolfgang Gutscher Wolfgang Gutscher Guitars 33-35 St. John's Square, Unit 51 Pennybank Chambers London EC1 M4DS 
+	<name>Wolfgang Gutscher</name>
+<business_name>Wolfgang Gutscher Guitars</business_name>
+<address>33-35 St. John's Square, Unit 51 
+Pennybank Chambers London EC1 M4DS </address>
 <email>wolfgang.gutscher@easynet.co.uk</email>
 </entry>
 <entry>
-Jens Jurgen Hucke JJ Hucke Guitars PO Box 124 Shipston on Stour Warwickshire CV36 5ZT 
-<website>http://www.jjhucke.com/</website>
+	<name>Jens Jurgen Hucke JJ Hucke Guitars PO Box 124 Shipston on Stour Warwickshire CV36 5ZT </name>
+<business_name></business_name><website>http://www.jjhucke.com/</website>
 </entry>
 <entry>
-Steve Jarman, Luthier Steve Jarman Guitars 
-<email>jarman@btinternet.com</email>
+	<name>Steve Jarman, Luthier Steve Jarman Guitars </name>
+<business_name></business_name><email>jarman@btinternet.com</email>
 <website>http://www.btinternet.com/~sjguitars/</website>
 </entry>
 <entry>
-Steve Jones Jones Guitars Brookfield Road, Brookfield Works Leeds Yorkshire LS6 4EH 
+	<name>Steve Jones </name>
+<business_name>Jones Guitars </business_name>
+<address>Brookfield Road, Brookfield Works Leeds Yorkshire LS6 4EH </address>
 <email>CWJ27@AOL.com</email>
 </entry>
 <entry>
-Sid Poole Poole Custom Guitars 4 Portway Road Cliffe Woods, Kent ME3 8JA 
+	<name>Sid Poole </name>
+<business_name>Poole Custom Guitars</business_name>
+<address>4 Portway Road Cliffe Woods, Kent ME3 8JA </address>
 </entry>
 <entry>
- Alain Aventini chez Scotto Musique 180, Rue de Rome 13006 Marseille 
+	<name> Alain Aventini </name>
+ <business_name>chez Scotto Musique </business_name>
+<address> 180, Rue de Rome 13006 Marseille </address>
 <email>melodiccontrol@usa.net</email>
 </entry>
 <entry>
-Maruice Dupont, Luthier Guitares Maurice Dupont 20, Port-Boutiers Cognac 16100 In North America, contact: Paul Hostetter (California ,USA listing) 
+	<name>Maruice Dupont</name>
+<business_name>Luthier Guitares </business_name>
+<address>Maurice Dupont 20, Port-Boutiers Cognac 16100</address>
 </entry>
 <entry>
-Gougi Fabrice L'Atelier de Lutherie Fabrice GOUGI Rue de la gare Penmarch 29760 
+	<name>Gougi Fabrice</name>
+<business_name>L'Atelier de Lutherie Fabrice</business_name>
+<address>GOUGI Rue de la gare Penmarch 29760 </address>
 <email>gougi@wanadoo.fr</email>
 </entry>
 <entry>
- Eggert Mar Marinosson Tonastoedin h/f Skipholt 50D Reykjavik 105 Iceland 
+	<name> Eggert Mar Marinosson Tonastoedin h/f </name>
+<address> Skipholt 50D Reykjavik 105 Iceland </address>
 </entry>
 <entry>
- Fernandez Setiahadi Chandra Perumahan Griya Pabean LI/ F55 Sidoarjo - Surabaya East Java - Indonesia 
+	<name> Fernandez Setiahadi </name>
+ <business_name>Chandra Perumahan Griya Pabean </business_name>
+<address> LI/ F55 Sidoarjo - Surabaya East Java - Indonesia </address>
 </entry>
 <entry>
- Phillip Murray M.A.C. Sound No. 17 Idrone Close, Knocklyon Dublin, 16. 
+	<name> Phillip Murray</name>
+ <business_name>M.A.C. Sound </business_name>
+<address> No. 17 Idrone Close, Knocklyon Dublin, 16. </address>
 <email>phillip@clubi.ie</email>
 </entry>
 <entry>
-Stephen Nixon Nixon Custom Guitars 47A McCurtain Street Cork, Ireland 
+	<name>Stephen </name>
+<business_name>Nixon Nixon Custom Guitars</business_name>
+<address>47A McCurtain Street Cork, Ireland </address>
 <email>arthive@indigo.ie</email>
 </entry>
 <entry>
- Lavezzi Adalberto Via Cav. di Vitt. Veneto 8 44011 Argenta (FE)
+	<name> Lavezzi Adalberto </name>
+ <business_name>Via Cav. di Vitt. </business_name>
+<address> Veneto 8 44011 Argenta (FE)</address>
 <phone>0532-805845</phone> 
 </entry>
 <entry>
-Mario Artese Liutisti &amp; Liutai Via Cattaneo,11/g Cosenza, Italy 87100 
+	<name>Mario Artese </name>
+<business_name>Liutisti &amp; Liutai Via Cattaneo</business_name>
+<address>11/g Cosenza, Italy 87100 </address>
 <email>maartese@tin.it</email>
 </entry>
 <entry>
-Scandurra Antonino Via Palazzotto 50, Catania 
+	<name>Scandurra Antonino </name>
+<address>Via Palazzotto 50, Catania </address>
 <phone>095-431901</phone>
 </entry>
 <entry>
-Andrea Ballarin Manne Guitars Via Paraiso, # 28 Schio VI, 36015 
+	<name>Andrea Ballarin</name>
+<business_name>Manne Guitars </business_name>
+<address>Via Paraiso, # 28 Schio VI, 36015 </address>
 <email>manne@atnet.it</email>
 <website>http://www.atnet.it/manne/</website>
 </entry>
 <entry>
-Enrico Bottelli Via Cuzzi 16 - 20155 Milano
+	<name>Enrico Bottelli</name>
+<address>Via Cuzzi 16 - 20155 Milano</address>
 <phone>02-39214715</phone>
 </entry>
 <entry>
-Lucio Antonio Carbone Via C. Goldoni 77, 20129 Milano
+	<name>Lucio Antonio Carbone </name>
+<address>Via C. Goldoni 77, 20129 Milano</address>
 <phone>02-70100028</phone>
 </entry>
 <entry>
-Carlo Ceccon Via Alessi, 13 - 20123 Milan
+	<name>Carlo Ceccon </name>
+<address>Via Alessi, 13 - 20123 Milan</address>
 <phone>39 2 38995409</phone>
 <email>ceccon@iol.it</email>
 </entry>
 <entry>
-Carlo Cecconi Via Alpi Apuane 44 - 00141 Roma
+	<name>Carlo Cecconi</name>
+<address>Via Alpi Apuane 44 - 00141 Roma</address>
 <phone>06-8170176</phone>
 </entry>
 <entry>
-Mario Rosazza Ferraris Via P.Cossa 3, Roma
+	<name>Mario Rosazza Ferraris</name>
+<address>Via P.Cossa 3, Roma</address>
 <phone>06-3230741</phone>
 </entry>
 <entry>
-Maurizio Foti Via Alessi, 13 - 20123 Milan
+	<name>Maurizio Foti</name>
+<address>Via Alessi, 13 - 20123 Milan</address>
 <phone>39 2 58101241</phone>
 <email>mf@iol.it</email>
 </entry>
 <entry>
-Cortesi Giancarlo Via Don Calvi 65, 24061 Albana S. Alessandro (BG)
+	<name>Cortesi Giancarlo </name>
+<address>Via Don Calvi 65, 24061 Albana S. Alessandro (BG)</address>
 <phone>035-580369</phone>
 </entry>
 <entry>
-Giussani Gioachino Podere Aile, 52031 Anghiari (Arezzo) 
+	<name>Giussani Gioachino </name>
+<address>Podere Aile, 52031 Anghiari (Arezzo) </address>
 </entry>
 <entry>
-Pulfer Heidi Via Piccinino 3, 47037 Rimini
+	<name>Pulfer Heidi </name>
+<address>Via Piccinino 3, 47037 Rimini</address>
 <phone>0541-27997</phone>
 </entry>
 <entry>
-Frignani Lorenzo Via F. Baracca 38, 41031 Camposanto (MO)
+	<name>Frignani Lorenzo </name>
+<address>Via F. Baracca 38, 41031 Camposanto (MO)</address>
 <phone>0535-87056</phone>
 </entry>
 <entry>
-Lovadina Luciano Via Verdi 5, 31030 Arcade (TV)
+	<name>Lovadina Luciano </name>
+<address>Via Verdi 5, 31030 Arcade (TV)</address>
 <phone>0422-720212</phone>
 </entry>
 <entry>
-Arban Luis Via Darwin 17 - 52100 Arezzo
+	<name>Arban Luis</name>
+<address>Via Darwin 17 - 52100 Arezzo</address>
 <phone>0575-381709</phone>
 </entry>
 <entry>
-Grimaldi Mario Via Lamarmora 2, 15070 Trisobbio (AL)
+	<name>Grimaldi Mario</name>
+<address>Via Lamarmora 2, 15070 Trisobbio (AL)</address>
 <phone>0143-831947</phone>
 </entry>
 <entry>
-Novelli Mario Via Nogariole 43, Giavera del Montello (TV)
+	<name>Novelli Mario</name>
+<address>Via Nogariole 43, Giavera del Montello (TV)</address>
 <phone>0422-770216</phone>
 </entry>
 <entry>
-Della Giustina Michele Via della Seta 35, 
+	<name>Della Giustina Michele Via della Seta 35, </name>
 <phone>0438-912378</phone> 
 </entry>
 <entry>
-Marcello Morrone, Guitar Maker Via Antonio Lanza 10 Cosenza 87100, Italia 
+	<name>Marcello Morrone</name>
+<business_name>Guitar Maker</business_name>
+<address>Via Antonio Lanza 10 Cosenza 87100, Italia </address>
 <email>liutaio@alice.it</email>
 </entry>
 <entry>
-Coriani Paolo Via Barchetta 98, 41100 Modena
+	<name>Coriani Paolo</name>
+<address>Via Barchetta 98, 41100 Modena</address>
 <phone>075-8041485</phone>
 </entry>
 <entry>
-Fabio Ragghianti Via Fornace 10, 55045 Caprigna (LU)
+	<name>Fabio Ragghianti</name>
+<address>Via Fornace 10, 55045 Caprigna (LU)</address>
 <phone>0584-796050</phone>
 </entry>
 <entry>
-Carlo Raspagni Via Vitt. Veneto 7, Vignate (MI)
+	<name>Carlo Raspagni</name>
+<address>Via Vitt. Veneto 7, Vignate (MI)</address>
 <phone>02-9566089</phone>
 </entry>
 <entry>
-Camillo Sampaolo Viale Isonzo 60 20135 Milano 
+	<name>Camillo Sampaolo</name>
+<address>Viale Isonzo 60 20135 Milano </address>
 <email>sampa@planet.it</email>
 <website>http://members.planet.it/freewww/sampa/home.html</website>
 </entry>
 <entry>
-Loverde Santo Via del Ciclamino 42, 95121 Catania
+	<name>Loverde Santo</name>
+<address>Via del Ciclamino 42, 95121 Catania</address>
 <phone>095-451046</phone>
 </entry>
 <entry>
-Andrea Tacchi Concert Guitar Maker Via Monte Oliveto 20 50124 Firenze Italia 
+	<name>Andrea Tacchi</name>
+<business_name>Concert Guitar Maker</business_name>
+<address>Via Monte Oliveto 20 50124 Firenze Italia </address>
 <email>tacchi@dada.it</email>
 </entry>
 <entry>
-Giuseppe Tumiati Lutemaker Viale, Toscana, 15/A Milano, I-20136 
+	<name>Giuseppe Tumiati Lutemaker</name>
+<address>Viale, Toscana, 15/A Milano, I-20136 </address>
 <email>g.tumiati@defcon1.com</email>
 <website>http://defcon1.com/g-tumiati</website>
 </entry>
 <entry>
-Cipriani Vincenzo Via Cimabue 5 - 06088 S.Maria d. Angeli, Assisi (PG)
+	<name>Cipriani Vincenzo</name>
+<address>Via Cimabue 5 - 06088 S.Maria d. Angeli, Assisi (PG)</address>
 <phone>075-8041485</phone>
 </entry>
 <entry>
-Local Luthiers We recommend Firefox browser, free from Mozilla.com.Local Luthiers - Malaysia Local Luthiers - Malaysia Jeffrey Yong 32 Jalan 3, Pandan Indah Industrial Park. Kuala Lumpur 55100 Malaysia 
+	<name>Jeffrey Yong</name>
+<address>32 Jalan 3
+Pandan Indah Industrial Park. Kuala Lumpur 55100 Malaysia </address>
 <website>www.jeffreyyong.com</website>
 <email>tcmych@tm.net.my</email>
 </entry>
 <entry>
-Abel Garcia Lopez 5
+	<name>Abel Garcia Lopez 5</name>
 <phone>2-(452) 5 02 39</phone>
-Guerrero 383 C.P. 60250 Paracho, Michoacan, Mexico 
+<address>Guerrero 383 C.P. 60250 Paracho, Michoacan, Mexico </address>
 </entry>
 <entry>
- Zealand Z. Q. Tate Fretted Instrument Engineering 37 Scout Ave. Auckalnd, New Zealand
+	<name> Zealand Z. Q. Tate Fretted Instrument Engineering</name>
+<address> 37 Scout Ave. Auckalnd, New Zealand</address>
 <phone>64-9-620-8790</phone>
 <email>croydon-mcrae@xtra.co.nz</email>
 </entry>
 <entry>
-Laurie Williams Williams Guitar Mfg Ltd Spicer Road RD3 Kaitaia Northland 0500 
+	<name>Laurie Williams</name>
+<business_name>Williams Guitar Mfg Ltd</business_name>
+<address>Spicer Road RD3 Kaitaia Northland 0500 </address>
 <email>laurie@williams-guitars.co.nz</email>
 </entry>
 <entry>
- Ireland Andy Kidd The Lowden Guitar Co., Ltd. 8 Glendord Way Newtownards Co. B23 4BX 
+	<name>Andy Kidd</name>
+<business_name>The Lowden Guitar Co.</business_name>, Ltd.
+<address>8 Glendord Way Newtownards Co. B23 4BX </address>
 </entry>
 <entry>
- Leif J&oslash;rgen Johansen Leif J&oslash;rgen Johansen Nordassloyfa 11A 1250 Oslo ph. 22622228 
+	<name> Leif J&oslash;rgen Johansen</name>
+ <business_name>Leif J&oslash;rgen Johansen Nordassloyfa </business_name>
+<address> 11A 1250 Oslo ph. 22622228 </address>
 </entry>
 <entry>
-Knut Myhrvold Gitar Doktor'n Haukedalsv. 66 3960 Stathelle 
+	<name>Knut Myhrvold </name>
+<business_name>Gitar Doktor'n Haukedalsv. </business_name>
+<address>66 3960 Stathelle </address>
 <email>gitardoktorn@tm.telia.no</email>
 </entry>
 <entry>
-Ingvard Tjelta Nadienne GWS Nordahlgriegsgate 21 Moss 1524
+	<name>Ingvard Tjelta </name>
+<address>Nadienne GWS Nordahlgriegsgate 21 Moss 1524</address>
 <phone>(47) 69 25 45 84</phone>
 </entry>
 <entry>
-Glenn Richard Thommassen The Goldfinger Co. V&acirc;lervn. 67 Moss 1537 
+	<name>Glenn Richard Thommassen</name>
+<business_name>The Goldfinger Co. </business_name>
+<address>V&acirc;lervn. 67 Moss 1537 </address>
 <email>Glennricardthommassen@broderdue.com</email>
 </entry>
 <entry>
-Knut Myhrvold Gitar Doktor'n Heglandsv.9 3766 Sannidal 
+	<name>Knut Myhrvold</name>
+<business_name>Gitar Doktor'n</business_name>
+<address>Heglandsv.9 3766 Sannidal </address>
 <email>gitardoktorn@online.no</email>
 </entry>
 <entry>
- Daniel Moncloa &quot;Moncloa&quot; Guitars M. Prado Ugarteche 626 - La Estancia La Molina Lima 12 
+	<name> Daniel Moncloa</name>
+ <business_name>&quot;Moncloa&quot; Guitars </business_name>
+<address> M. Prado Ugarteche 626 - La Estancia La Molina Lima 12 </address>
 <email>danielg@net.cosapidata.com.pe</email>
 <website>http://members.tripod.com/~Moncloa/</website>
 <phone>(511) 368-0260</phone>/<phone>(511) 479-8456</phone><phone>(511) 479-0266</phone>
 </entry>
 <entry>
- Ricardo Ferreira Andr&eacute; Lisboa 
+	<name> Ricardo Ferreira</name>
+ <business_name>Andr&eacute;Lisboa </business_name>
 <email>Bizet90@hotmail.com</email>
 </entry>
 <entry>
- William C. Kelday The Guitar Workshop Unit 3 AldessanHouse The Clachan Campsie Glen Glasgow, G65 7AB 
+	<name> William C. Kelday</name>
+ <business_name>The Guitar Workshop</business_name>
+<address> Unit 3 AldessanHouse The Clachan Campsie Glen Glasgow, G65 7AB </address>
 <email>billguitmk@aol.com</email>
 </entry>
 <entry>
-Dr. Bill Samson 88 Grove Road, West Ferry Dundee DD5 1LB 
+	<name>Dr. Bill Samson </name>
+<address>88 Grove Road, West Ferry Dundee DD5 1LB </address>
 <email>wbs@sol.co.uk</email>
 </entry>
 <entry>
- Africa John Silver # 5 Chester Rd Parkwood Johannesburg 
+	<name>John Silver</name>
+<address># 5 Chester Rd Parkwood Johannesburg </address>
 </entry>
 <entry>
- Francisco Barba Arroyo 18, Sevilla 
+	<name> Francisco Barba </name>
+<address> Arroyo 18, Sevilla </address>
 </entry>
 <entry>
-German Perez Barranco Guitarraria German Perez Barranco cuesta de Gomerez 10 Granada 18009 
+	<name>German Perez </name>
+<business_name>Barranco Guitarraria German Perez Barranco cuesta de Gomerez </business_name>
+<address>10 Granada 18009 </address>
 <email>guitarras_german@hotmail.com</email>
 <website>http://www.geocities.com/Nashville/8901</website>
 </entry>
 <entry>
-Rene Baarslag, Gerente Baarslag and Espinoza Lista de Correos Lanjaron Granada 18420 
+	<name>Rene Baarslag</name>
+<business_name>Gerente Baarslag and Espinoza </business_name>
+<address>Lista de Correos Lanjaron Granada 18420 </address>
 </entry>
 <entry>
-Antonio Raya Ferrer, Luthier Raya and Raya Paseo del Salon 9 Granada 18009 
+	<name>Antonio Raya Ferrer</name>
+<business_name>Luthier Raya and Raya Paseo del Salon</business_name>
+<address> 9 Granada 18009 </address>
 </entry>
 <entry>
-Henner Hagenlocher Hagenlocher Guitarras Calle Guadarrama 3 Bajo Granada E18009 
+	<name>Henner Hagenlocher</name>
+<business_name>Hagenlocher Guitarras Calle Guadarrama</business_name>
+<address>3 Bajo Granada E18009 </address>
 <email>henner@valnet.es</email>
 </entry>
 <entry>
-Conde Hermanos Conde Hermanos-Sobrinos de Esteso- c/ Felipe V, 2 Madrid, Spain 
+	<name>Conde Hermanos </name>
+<business_name>Conde Hermanos</business_name>-Sobrinos de Esteso
+<address>c/ Felipe V2 Madrid, Spain </address>
 <email>condehermanos@mx2.redestb.es</email>
 <website>http://www.condehermanos.com</website>
 </entry>
 <entry>
-Fernado Alonso Jaen Jaen Archtop Guitars C/ Solana de Opanel, 14 BIS - 2 28091 Madrid 
+	<name>Fernado Alonso </name>
+<business_name>Jaen Jaen Archtop Guitars</business_name>
+<address>C/ Solana de Opanel, 14 BIS - 2 28091 Madrid </address>
 <email>falonso@alcatel.es</email>
 </entry>
 <entry>
-Paco Jim&eacute;nez Paco Jim&eacute;nez Avda. de Italia, 4-D Granada 
+	<name>Paco Jim&eacute;nez</name>
+<business_name>Paco Jim&eacute;nez</business_name>
+<address>Avda. de Italia, 4-D Granada </address>
 <email>paco@100mbps.es</email>
 <website>http://100mbps.es/paco/pacoweb.html</website>
 </entry>
 <entry>
-Alberto Pantoja Martin Calle Pozp 20, Sevilla 
+	<name>Alberto Pantoja</name>
+<address>Martin Calle Pozp 20, Sevilla </address>
 </entry>
 <entry>
-Javier Camps Masos Guitarres Camps Sl Canigo,25 17834 Porqueres 
+	<name>Javier Camps</name>
+<business_name>Masos Guitarres Camps</business_name>
+<address>Sl Canigo,25 17834 Porqueres </address>
 <email>jcamps13@pie.xtec.es</email>
 </entry>
 <entry>
-Antonio Marin Montero, Gerente Marin Cuesta Caidero 1 Granada 18009 
+	<name>Antonio Marin Montero</name>
+<business_name>Gerente Marin Cuesta</business_name>
+<address>Caidero 1 Granada 18009 </address>
 </entry>
 <entry>
-Antonio Raya Pardo, Gerente Paseo del Salon 9 Granada 18009 
+	<name>Antonio Raya Pardo</name>
+<business_name>Gerente Paseo del Salon </business_name>
+<address>9 Granada 18009 </address>
 </entry>
 <entry>
-Carlos Romera P&egrave;rez C/San Leonardo 36, 2j2 C.P.04004 Almer&igrave;a 
+	<name>Carlos Romera P&egrave;rez </name>
+<address>C/San Leonardo 36, 2j2 C.P.04004 Almer&igrave;a </address>
 </entry>
 <entry>
-Josse Marin Plazueolo, Gerente Cuesta Caidero 1 Granada 18009 
+	<name>Josse Marin Plazueolo</name>
+<business_name>Gerente Cuesta Caidero</business_name>
+<address>1 Granada 18009 </address>
 </entry>
 <entry>
-Rafael Montes Ramirez Luthiers S.L. Apartado 126 Cerdanyola Del Valles, Barcelona E-08290 
+	<name>Rafael Montes Ramirez</name>
+<business_name>Luthiers S.L. Apartado </business_name>
+<address>126 Cerdanyola Del Valles, Barcelona E-08290 </address>
 <email>luthiers@abaforum.es</email>
 </entry>
 <entry>
-Manuel Reyes Calle Armas 4, Cordoba 
+	<name>Manuel Reyes</name>
+<address>Calle Armas 4, Cordoba </address>
 </entry>
 <entry>
-Rodriguez Cordoba 
+	<name>Rodriguez Cordoba </name>
+<business_name></business_name></entry>
+<entry>
+	<name>Luis Miguel Maldonado Ruiz</name>
+<business_name>Guitarreria Maldonado &amp; Hijos </business_name>
+<address>Avda Velazquez,57 Malaga 29004 </address>
 </entry>
 <entry>
-Luis Miguel Maldonado Ruiz Guitarreria Maldonado &amp; Hijos Avda Velazquez,57 Malaga 29004 
+	<name>Pedro Maldonado Ruiz Guitarreria Maldonado &amp; </name>
+<address>Hijos Avda Isabel Manoja, 4 Torremolinos 29620 </address>
 </entry>
 <entry>
-Pedro Maldonado Ruiz Guitarreria Maldonado &amp; Hijos Avda Isabel Manoja, 4 Torremolinos 29620 
-</entry>
-<entry>
- Mats Eriksson Hansta 3 Vingaker S-64391 
+	<name> Mats Eriksson </name>
+<address> Hansta 3 Vingaker S-64391 </address>
 <email>mats.eriksson@vingaker.mail.telia.com</email>
 </entry>
 <entry>
-Peter Bengtsson Instrumentateljen Backavagen 9 S-294 75 Solvesborg 
+	<name>Peter Bengtsson </name>
+<business_name>Instrumentateljen Backavagen</business_name>
+<address>9 S-294 75 Solvesborg </address>
 <email>peter.bengtsson@euromail.se</email>
 </entry>
 <entry>
-Klas Eldh Handmade Guitar and Bass Frimans v&auml;g 83254 Fr&ouml;s&ouml;n &Ouml;sterund 
+	<name>Klas Eldh</name>
+<business_name>Handmade Guitar and Bass Frimans v&auml;g </business_name>
+<address>83254 Fr&ouml;s&ouml;n &Ouml;sterund </address>
 <email>eldh@mail.bip.net</email>
 <website>http://home6.swipnet.se/~w-62511/klas/klasbas.htm</website>
 </entry>
 <entry>
-Paul Guy Paul Guy Guitars Katarina Bangata 65 116 42 Stockholm 
+	<name>Paul Guy </name>
+<business_name>Paul Guy Guitars </business_name>
+<address>Katarina Bangata 65 116 42 Stockholm </address>
 <email>paul@guyguitars.se</email>
 <website>http://home3.swipnet.se/~w-37192/</website>
 </entry>
 <entry>
-Per Hallgren Guitarmaker Skraddarns vag 14 Grabo 
+	<name>Per Hallgren</name>
+<business_name>Guitarmaker Skraddarns</business_name>
+<address>vag 14 Grabo </address>
 <email>per.hallgren@mbox301.swipnet.se</email>
 </entry>
 <entry>
-Javier Hern&aacute;ndez Luthier Humleg&aring;rdsgatan 13 Stockholm 122 44 
-<email>x-herdz@swipnet.se</email>
+	<name>Javier Hern&aacute;ndez Luthier Humleg&aring;rdsgatan 13 Stockholm 122 44 </name>
+<business_name></business_name><email>x-herdz@swipnet.se</email>
 </entry>
 <entry>
-Jens Johansson Guitarbuilder Odenskogvagen 84 Ostersund 
+	<name>Jens Johansson </name>
+<business_name>Guitarbuilder </business_name>
+<address>Odenskogvagen 84 Ostersund </address>
 <email>vfhs@algonet.se</email>
 </entry>
 <entry>
-Jokke Lagerqvist JWL Instrument Tallgatan 7 56013 HOK 
-<email>jokke@jwl.pp.se</email>
+	<name>Jokke Lagerqvist JWL Instrument Tallgatan 7 56013 HOK </name>
+<business_name></business_name><email>jokke@jwl.pp.se</email>
 <website>http://flashback.net/~guitar/</website>
 </entry>
 <entry>
-Michael Sand&egrave;n Sand&egrave;n Acoustic Guitars Karl X Gustavs Gata 33 Helsingborg 254 39 
+	<name>Michael Sand&egrave;n</name>
+<business_name>Sand&egrave;n Acoustic Guitars </business_name>
+<address>Karl X Gustavs Gata 33 Helsingborg 254 39 </address>
 </entry>
 <entry>
-Roger Str&ocirc;mberg Andgra&ecirc;nd 28 Lulea 
+	<name>Roger Str&ocirc;mberg </name>
+<address>Andgra&ecirc;nd 28 Lulea </address>
 <email>roger.stromberg@usa.net</email>
 </entry>
 <entry>
-Jan Vaisto Luthier Malvavagen 23 Akersberga 184 35 
+	<name>Jan Vaisto </name>
+<business_name>Luthier </business_name>
+<address>Malvavagen 23 Akersberga 184 35 </address>
 <email>jan.vaisto@mailbox.swipnet.se</email>
 </entry>
 <entry>
- . David Marioni Mad Custom Guitars Daniel Baud-Bovy 1205 Geneva Phone: 41 22 321 99 35  
+	<name>David Marioni </name>
+<business_name>Mad Custom Guitars </business_name>
+<address>Daniel Baud-Bovy 1205 Geneva </address>
+<phone>41 22 321 99 35</phone>
 <email>info@madguitars.ch</email>
 </entry>
 <entry>
-Luigi De Pascali PO Box 50 Avully - Geneva 1237 Phone: 41 22 756 25 38 
+	<name>Luigi De Pascali</name>
+<address>PO Box 50 Avully - Geneva 1237</address>
+<phone>41 22 756 25 38</phone>
 </entry>
 <entry>
-VOLPIGUITAR + ALPHORNTOBIAS Victor M. Volpi Gehristrasse 1 CH-6010 Kriens Switzerland Tel: 041 340 88 40 
+	<name>VOLPIGUITAR + ALPHORNTOBIAS</name>
+<business_name>Victor M. Volpi Gehristrasse</business_name>
+<address>1 CH-6010 Kriens Switzerland </address>
+<phone>041 340 88 40</phone>
 <website>http://volpiguitar.com</website>
 <website>http://alphorntobias.ch</website>
-W. Flohr Jazzebel Kerktoren 4 Middelburg Zld 
+<address>W. Flohr Jazzebel Kerktoren 4 Middelburg Zld </address>
 <email>flos1@pi.net</email>
 </entry>
 <entry>
-Hans van Loben Sels Teut 96 Amersfoort 3811 WZ 
+	<name>Hans van Loben </name>
+<address>Sels Teut 96 Amersfoort 3811 WZ </address>
 <email>loben@kpd.nl</email>
 <website>http://domeinen.net/lobensels</website>
 </entry>
 <entry>
-Geert van Opstal Berkenlaan 8 Loon op Zand 5175CH 
+	<name>Geert van Opstal </name>
+<business_name>Berkenlaan </business_name>
+<address>8 Loon op Zand 5175CH </address>
 <email>luthier@worldonline.nl</email>
 031(0)416362690 
 </entry>
 <entry>
-Johan Rebergen Joh. Camphuysstraat 47 3534 ES Utrecht, Holland 
+	<name>Johan Rebergen </name>
+<address>Joh. Camphuysstraat 47 3534 ES Utrecht, Holland </address>
 </entry>
 <entry>
- Ozhan Golebatmaz 100 Yil AA-14 Balgat - Ankara c/o 
+	<name> Ozhan Golebatmaz </name>
+<address> 100 Yil AA-14 Balgat - Ankara c/o </address>
 <email>kemal@tel-soft.com</email>
 </entry>
 <entry>
-Local Luthiers - Viet Nam Nam
-</entry>
+	<name>Local Luthiers - Viet Nam Nam</name>
+<business_name></business_name></entry>
 <entry>
-Do Viet Dung, Luthier
-Thanh CamNo. 45 &amp; 47, Alley 127, Hao Nam Street
-Dong Da district, Ha Noi
+	<name>Do Viet Dung, Luthier</name>
+<address>Thanh CamNo. 45 &amp; 47, Alley 127, Hao Nam Street
+Dong Da district, Ha Noi</address>
 Viet NamPhone: (84-4) 38516569
-Cell: +84 913301569
+<phone>+84 913301569</phone>
 <email>dungdoviet@yahoo.com</email>
 <website>http://www.thanhcammusic.com</website>
 </entry>
 <entry>
-Duy Ngoc Guitars31 Nguyen Thien Thuat
-Quan 3, Ho Chi Minh
-Viet NamPhone; 08-38-306436
-Cell Phone: 0908-364597
+	<name>Duy Ngoc Guitars</name>
+<address>31 Nguyen Thien Thuat Quan 3, Ho Chi Minh</address>
+<phone>08-38-306436</phone>
+<phone>0908-364597</phone>
 <email>duyngocguitar@hotmail.com</email>
 </entry>
 </entries>

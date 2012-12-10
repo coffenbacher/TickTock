@@ -1,3 +1,4 @@
 :%s/\(<entry>\n*\)\(\s.*\)/\1\t<name>\2<\/name>/g
-:%s/\(name>\n^\s*\)\([a-zA-Z ]*\)\(.*[0-9].*\)\@!/\1<business_name>\2<\/business_name>/g
+:%s/\(name>\n^\s*\)\([a-zA-Z  '\.\&\;]*\)\(.*[0-9].*\)\@!/\1<business_name>\2<\/business_name>/g
 :%s/\(.<.\)\@!\(.*[0-9].*\n.*[0-9].*\)/<address>\2<\/address>/g
+:%s/\(.<.\)\@!\(.*\)/<address>\1<\/address>/gc
