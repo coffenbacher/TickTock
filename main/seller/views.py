@@ -1,7 +1,7 @@
 # Create your views here.
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login
-from django.db.models import Avg
+from django.db.models import Avg, Count
 from models import *
 from forms import *
 from inventory.forms import *
@@ -52,12 +52,22 @@ def show(request, name):
     return render_to_response('seller/show.html', RequestContext(request, {'s': s, 'edit': edit, 'form': form}))
 
 def index(request, **kwargs):
+    options, option_level, selected = False, False, False
     if 'location__country' in kwargs:
         zoom = 4
         sellers = Seller.objects.filter(location__country=kwargs['location__country'])
+        selected = kwargs['location__country']
+        options = sellers.values_list('location__administrative_area_level_1').annotate(count=Count('location__administrative_area_level_1')).order_by('location__administrative_area_level_1')
+        option_level = {'url': 'state', 'label': 'State / Province'}
+    elif 'location__state' in kwargs:
+        zoom = 6
+        sellers = Seller.objects.filter(location__administrative_area_level_1=kwargs['location__state'])
+        selected = kwargs['location__state']
     else:
         zoom = 2
         sellers = Seller.objects.all()
+        options = SellerLocation.objects.values_list('country').annotate(count=Count('country')).order_by('country')
+        option_level = {'url': 'country', 'label': 'Country'}
 
     center_lat = sellers.aggregate(Avg('location__lat'))['location__lat__avg']
     center_lng = sellers.aggregate(Avg('location__lng'))['location__lng__avg']
@@ -68,5 +78,8 @@ def index(request, **kwargs):
     return render_to_response('seller/index.html', {'s': sellers,
                                                     'center_lat': center_lat,
                                                     'center_lng': center_lng,
-                                                    'zoom': zoom})
+                                                    'zoom': zoom,
+                                                    'options': options,
+                                                    'option_level': option_level,
+                                                    'selected': selected})
 

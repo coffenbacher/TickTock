@@ -39,8 +39,19 @@
             <div id="map" style="height:500px" class="span12"></div>
         </div>
         <hr />
+        {% if options %}
+        <div class="row">
+            <h2>Browse by {{ option_level.label }}</h2>
+            <ol>
+            {% for o in options %}
+                <li><a href="/seller/{{ option_level.url }}/{{ o.0 }}/">{{ o.0 }} - {{ o.1 }}</a></li>
+            {% endfor %}
+            </ol>
+        </div>
+        {% endif %}
 
         <div class="row">
+            {% if selected %}<h2>Luthiers in {{ selected }}</h2>{% endif %}
             {% for i in s %}
             
             <div class="span4">
