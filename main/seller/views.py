@@ -46,10 +46,20 @@ def show(request, name):
             f.model = i_model 
             f.seller = request.user.seller
             f.save()
+    elif request.method == 'POST':
+        form = InstrumentForm()
+        message = "Thanks for your message! We'll get back to you as soon as possible."
+        contact = SellerContactForm(request.POST)
+        if contact.is_valid():
+            c = contact.save(commit=False)
+            c.seller = s
+            c.save()
     else:
         form = InstrumentForm()
+        contact = SellerContactForm()
+        message = False
     
-    return render_to_response('seller/show.html', RequestContext(request, {'s': s, 'edit': edit, 'form': form}))
+    return render_to_response('seller/show.html', RequestContext(request, {'s': s, 'edit': edit, 'form': form, 'contact': contact, 'message': message}))
 
 def index(request, **kwargs):
     options, option_level, selected = False, False, False
@@ -73,7 +83,7 @@ def index(request, **kwargs):
     center_lng = sellers.aggregate(Avg('location__lng'))['location__lng__avg']
 
     if 'json' in request.GET:
-        return HttpResponse(json.dumps(list(sellers.values('id', 'location__lat', 'location__lng'))))
+        return HttpResponse(json.dumps(list(sellers.values('id', 'name', 'location__lat', 'location__lng', 'sellerconfirmation__confirm'))))
     
     return render_to_response('seller/index.html', {'s': sellers,
                                                     'center_lat': center_lat,

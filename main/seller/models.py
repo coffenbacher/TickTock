@@ -74,3 +74,16 @@ class SellerLocation(TimeStampedModel):
                 d['postal_code'] = c['long_name']
         return cls.objects.create(**d)        
 
+class SellerConfirmation(TimeStampedModel):
+    seller = models.ForeignKey(Seller)
+    confirm = models.BooleanField()
+    message = models.TextField()
+
+class SellerContact(TimeStampedModel):
+    seller = models.ForeignKey(Seller)
+    email = models.CharField(max_length=200, verbose_name='Your email, so we can respond')
+    message = models.TextField()
+
+    def __unicode__(self):
+        return "From: %s, To: %s" % (self.email, self.seller)
+
