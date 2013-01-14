@@ -6,6 +6,6 @@ urlpatterns = patterns('',
     url(r'^country/(?P<location__country>.*)/$', 'seller.views.index'),
     url(r'^state/(?P<location__state>.*)/$', 'seller.views.index'),
     url(r'^create/$', 'seller.views.create'),
-    url(r'^(?P<name>\w+)$', 'seller.views.show'),
+    url(r'^(?P<name>.*)/$', 'seller.views.show'),
 )
 

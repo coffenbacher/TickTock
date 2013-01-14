@@ -17,3 +17,8 @@ class UserForm(ModelForm):
         widgets = {
             'password': PasswordInput()
         }
+
+class SellerContactForm(ModelForm):
+    class Meta:
+        model = SellerContact
+        exclude = ('seller')

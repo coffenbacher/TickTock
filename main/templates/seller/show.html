@@ -1,36 +1,78 @@
 {% extends 'base.html' %}
+{% block includes %}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="/static/js/gmaps.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      map = new GMaps({
+        div: '#map',
+        lat: {{ s.location.lat }}, 
+        lng: {{ s.location.lng }},
+        zoom: 9
+      });
+      map.addMarker({
+        lat: {{ s.location.lat }}, 
+        lng: {{ s.location.lng }},
+        title: '{{ s.location.formatted_address }}'
+      });
+    });
+
+</script>
+{% endblock %}
+
 {% block content %}
     <div class="hero-unit">
       <div>
         <h1>
           {{ s.name }} 
         </h1>
+        {% if s.subtitle %}
         <p>
           {{ s.subtitle }}
         </p>
+        {% else %}
+        <p>
+          {{ s.location.formatted_address }}
+        </p>
+        {% endif %}
       </div>
     </div>
+
     <div class="container">
-        <ul class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#red">Instruments</a></li>
-            <li><a href="#orange">Services</a></li>
-            <li><a href="#yellow">Directions</a></li>
-            <li><a href="#green">About</a></li>
-        </ul>
-        <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane active" id="red">
-                <div class="row">
-                {% for i in s.instrument_set.all %}
-                    {% include 'inventory/instrument.html' %}
-                    {% if forloop.counter|divisibleby:"3" %}
-                    </div><div class="row">
-                    {% endif %}
-                {% endfor %}
+        <div class="row">
+            <div id="map" style="height:300px" class="span6"></div>
+            <div class="span6">
+                <h2>Contact {{ s.name }}:</h2>
+                <p>Information about instruments, repairs, hours, shipping, etc.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ contact }}
+                    <br />
+                    <input type="submit">
+                    </form>
                 </div>
-                {% if edit %}
-                    <hr >
-                    <form method="POST">
-                        {% csrf_token %}
+            </div>
+            <!--
+            <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="active"><a href="#red">Instruments</a></li>
+                <li><a href="#orange">Services</a></li>
+                <li><a href="#yellow">Directions</a></li>
+                <li><a href="#green">About</a></li>
+            </ul>
+            <div id="my-tab-content" class="tab-content">
+                <div class="tab-pane active" id="red">
+                    <div class="row">
+                    {% for i in s.instrument_set.all %}
+                        {% include 'inventory/instrument.html' %}
+                        {% if forloop.counter|divisibleby:"3" %}
+                        </div><div class="row">
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                    {% if edit %}
+                        <hr >
+                        <form method="POST">
+                            {% csrf_token %}
                         <h2>List an instrument:</h2>
                         {{ form }}
                         <br>
@@ -71,6 +113,7 @@ I also stock a range of accessories. If you let me know which strings and rosin 
                 <p>green green green green green</p>
             </div>
         </div>
+        -->
  
         <hr />
     </div >
