@@ -43,7 +43,6 @@ class SellerLocation(TimeStampedModel):
     formatted_address = models.CharField(max_length=500)
     lat = models.FloatField(null=True, blank=True)
     lng = models.FloatField(null=True, blank=True)
-    pnt = models.PointField(null=True, blank=True)
     administrative_area_level_1 = models.CharField(max_length=100, null=True)
     administrative_area_level_2 = models.CharField(max_length=100, null=True)
     administrative_area_level_3 = models.CharField(max_length=100, null=True)
