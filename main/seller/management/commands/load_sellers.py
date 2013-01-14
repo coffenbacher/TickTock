@@ -13,7 +13,7 @@ SELLER_DATA = os.path.abspath(os.path.join(os.path.dirname(models.__file__), 'da
 
 class Command(NoArgsCommand):
     def allCountries(self, **options):
-        fs = ['us.xml', 'us2.xml', 'canada.xml']#, 'world.xml', 'world2.xml']
+        fs = ['us.xml', 'us2.xml', 'canada.xml', 'world.xml', 'uk_cityonly.xml']#, 'world.xml', 'world2.xml']
         txt = ""
         for f in fs:
             tmp = os.path.join(SELLER_DATA, f)
